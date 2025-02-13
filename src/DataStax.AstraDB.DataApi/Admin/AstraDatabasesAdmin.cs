@@ -51,13 +51,13 @@ public class AstraDatabasesAdmin
 
     public List<string> ListDatabaseNames()
     {
-        return ListDatabases().Select(item => item.Info.Name).ToList();
+        return ListDatabases().Select(db => db.Info.Name).ToList();
     }
 
     public async Task<List<string>> ListDatabaseNamesAsync()
     {
-        var dbList = await ListDatabasesAsync().ConfigureAwait(false);
-        return dbList.Select(item => item.Info.Name).ToList();
+        var databases = await ListDatabasesAsync().ConfigureAwait(false);
+        return databases.Select(db => db.Info.Name).ToList();
     }
 
     public List<DatabaseInfo> ListDatabases()
@@ -352,4 +352,6 @@ public class AstraDatabasesAdmin
     {
         return new Command(_client, OptionsTree, new AdminCommandUrlBuilder(OptionsTree));
     }
+
 }
+

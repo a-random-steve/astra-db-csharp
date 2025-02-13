@@ -1,6 +1,6 @@
 using DataStax.AstraDB.DataApi;
-using DataStax.AstraDB.DataApi.Core;
 using DataStax.AstraDB.DataApi.Collections;
+using DataStax.AstraDB.DataApi.Core;
 using Xunit;
 
 namespace DataStax.AstraDB.DataApi.IntegrationTests.Tests;
@@ -215,4 +215,5 @@ public class AdminTests
 
         Assert.True(dropped);
     }
+
 }
